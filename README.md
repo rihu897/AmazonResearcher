@@ -1,14 +1,14 @@
 # Amazon情報抽出ツール
 
 ## 抽出可能項目
-・商品名
-・商品URL
-・ASIN/ISBN-13
-・価格
-・在庫情報
-・お届け日時
-・出荷元
-・販売元
+・商品名  
+・商品URL  
+・ASIN/ISBN-13  
+・価格  
+・在庫情報  
+・お届け日時  
+・出荷元  
+・販売元  
 
 ## 抽出対象外、除外方法
 ・ダウンロード版："今すぐダウンロードできます" in driver.find_element_by_css_selector("#availability > span").get_attribute("textContent")で除外
