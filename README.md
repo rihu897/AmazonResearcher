@@ -32,10 +32,10 @@
 ・中古品に対応させて新品or中古品のみを選択して調査可能にする。
 
 ## AmazonのHTML調査まとめ
-### 商品一覧取得処理用
+### ----- 商品一覧取得処理用 ----------------------------
 #### 商品名
-・span > div > span > a:nth-of-type(1) > .p13n-sc-truncate-desktop-type2
-・h2 > a > span
+・span > div > span > a:nth-of-type(1) > .p13n-sc-truncate-desktop-type2\n
+・h2 > a > span\n
 
 #### 商品URL
 ・span > div > span > a:nth-of-type(1)
@@ -44,7 +44,7 @@
 【メモ】
 ・ランキングページと検索ページでaタグの位置が異なる
 
-### 個別ページ情報取得処理用
+### ----- 個別ページ情報取得処理用 -----------------------
 #### 商品名、商品URL
 ・引数のリストから取得
 
