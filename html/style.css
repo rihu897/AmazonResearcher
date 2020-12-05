@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+}
+
+h1 {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    border-top: solid 2px #cd853f;
+    border-bottom: solid 2px #cd853f;
+}
+
+#banner {
+    width: 316px;
+}
+
+.tab {
+    display: flex;
+    margin-top: 0;
+    margin-left: -40px;
+    border-bottom: solid 2px #cd853f;
+}
+
+.tab li {
+    width: 25%;
+    text-align: center;
+    color: #333;
+    margin: 0 -2px -1px 0;
+    padding: 5px 27px;
+    cursor: pointer;
+    list-style: none;
+    transition: .3s;
+}
+
+.tab li.active {
+    color: #fff;
+    background: #cd853f;
+    cursor: auto;
+}
+
+.forms form {
+    display: none;
+}
+.forms form.show {
+    display: block;
+}
+
+.forms, .result_form {
+    margin: 0px 40px;
+}
+
+#stert_button {
+    margin: 0 auto;
+}
+
+#target_url, #target_csv, .output_destination, #keyword {
+    width: 580px;
+}
+
+.form_text {
+    margin-bottom: 0;
+}
+
+.ext_button {
+    font-size: 15px;
+    padding: 5px 40px;
+}
+
+#asin_table {
+    border-collapse: collapse;
+    border : 2px solid black;
+}
+
+#asin_table th {
+    border: 1px solid black;
+    padding: 0px 5px;
+    background-color: #f5f5f5;
+}
+
+#asin_table td {
+    border : 1px solid black;
+    padding: 0px 5px;
+}
+
+#asin_width {
+    width: 150px;
+}
+
+#product_width {
+    width: 350px;
+}
+
+#add_form {
+    margin-top: 3px;
+    margin-left: 329px;
+}
+
+#add_asin {
+    width: 200px;
+}

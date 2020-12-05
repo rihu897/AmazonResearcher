@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <title>AmazonResearcher</title>
+        <link rel="stylesheet" href="./style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <!-- <h1>Amazon Researcher</h1> -->
+        <h1><img id="banner" src="./img/banner.jpg"></h1>
+        <!-- 検索条件タブ -->
+         <ul class="tab clearfix">
+             <li class="active">URL</li>
+             <li>ASIN/IBSN-13</li>
+             <li>ランキング</li>
+             <li>キーワード</li>
+         </ul>
+        <div class="forms">
+            <!-- URL検索フォーム -->
+            <form id="url_form" class="show">
+                <p class="form_text">■ URL</p>
+                <input id="target_url" type="text" placeholder="抽出開始ページのURLを入力してください">
+                <p class="form_text">■ 結果ファイル出力先</p>
+                <input class="output_destination" type="text" placeholder="抽出結果ファイルの出力先を入力してください">
+                <p><button class="ext_button" id="url_button" type="button">抽出開始</button></p>
+            </form>
+            <!-- ASIN検索フォーム -->
+            <form id="asin_form">
+                <p class="form_text">■ ASIN/ISBN-13情報ファイル</p>
+                <input id="target_csv" type="text" placeholder="CSVファイルのパスを入力してください">
+                <div id="asin_table_box"></div>
+                <p class="form_text">■ 結果ファイル出力先</p>
+                <input class="output_destination" type="text" placeholder="抽出結果ファイルの出力先を入力してください">
+                <p><button class="ext_button" id="asin_button" type="button">抽出開始</button></p>
+            </form>
+            <!-- ランキング検索フォーム -->
+            <form id="ranking_form">
+                <p class="form_text">■ ランキング</p>
+                <select id="ranking_type">
+                    <option value="0">売れ筋ランキング</option>
+                    <option value="1">新着ランキング</option>
+                    <option value="2">人気度ランキング</option>
+                    <option value="3">ほしい物ランキング</option>
+                    <option value="4">人気ギフトランキング</option>
+                </select>
+                <p class="form_text">■ カテゴリー</p>
+                <select id="ranking_category">
+                    <option value="0">すべてのカテゴリー</option>
+                    <option value="1">DIY・工具・ガーデン</option>
+                    <option value="2">DVD</option>
+                    <option value="3">PCソフト</option>
+                    <option value="4">おもちゃ</option>
+                    <option value="5">アプリ&ゲーム</option>
+                    <option value="6">ギフト券</option>
+                    <option value="7">ゲーム</option>
+                    <option value="8">シューズ&バッグ</option>
+                    <option value="9">ジュエリー</option>
+                    <option value="10">スポーツ&アウトドア</option>
+                    <option value="11">デジタルミュージック</option>
+                    <option value="12">ドラッグストア</option>
+                    <option value="13">パソコン・周辺機器</option>
+                    <option value="14">ビューティー</option>
+                    <option value="15">ファッション</option>
+                    <option value="16">ベビー&マタニティ</option>
+                    <option value="17">ペット用品</option>
+                    <option value="18">ホビー</option>
+                    <option value="19">ホーム&キッチン</option>
+                    <option value="20">ミュージック</option>
+                    <option value="21">大型家電</option>
+                    <option value="22">家電&カメラ</option>
+                    <option value="23">文房具・オフィス用品</option>
+                    <option value="24">服&ファッション小物</option>
+                    <option value="25">本</option>
+                    <option value="26">楽器・音響機器</option>
+                    <option value="27">洋書</option>
+                    <option value="28">産業・研究開発用品</option>
+                    <option value="29">腕時計</option>
+                    <option value="30">車&バイク</option>
+                    <option value="31">食品・飲料・お酒</option>
+                </select>
+                <p class="form_text">■ 結果ファイル出力先</p>
+                <input class="output_destination" type="text" placeholder="抽出結果ファイルの出力先を入力してください">
+                <p><button class="ext_button" id="ranking_button" type="button">抽出開始</button></p>
+            </form>
+            <!-- キーワード検索フォーム -->
+            <form id="keyword_form">
+                <p class="form_text">■ 検索キーワード</p>
+                <input id="keyword" type="text" placeholder="検索したいキーワードを入力してください">
+                <p class="form_text">■ 並び順</p>
+                <select id="sort">
+                    <option value="0">アマゾンおすすめ商品</option>
+                    <option value="1">価格の安い順番</option>
+                    <option value="2">価格の高い順番</option>
+                    <option value="3">レビューの評価順</option>
+                    <option value="4">最新商品</option>
+                </select>
+                <p class="form_text">■ Amazonプライム</p>
+                <select id="prime">
+                    <option value="0">指定なし</option>
+                    <option value="1">primeのみ</option>
+                </select>
+                <p class="form_text">■ 価格帯</p>
+                <select id="price_range">
+                    <option value="0">指定なし</option>
+                    <option value="1">0-1500円</option>
+                    <option value="2">1500-5000円</option>
+                    <option value="3">5000-10000円</option>
+                    <option value="4">10000-30000円</option>
+                    <option value="5">30000円以上</option>
+                </select>
+                <p class="form_text">■ レビュー評価</p>
+                <select id="review">
+                    <option value="0">指定なし</option>
+                    <option value="1">★★★★☆以上</option>
+                    <option value="2">★★★☆☆以上</option>
+                    <option value="3">★★☆☆☆以上</option>
+                    <option value="4">★☆☆☆☆以上</option>
+                </select>
+                <p class="form_text">■ 結果ファイル出力先</p>
+                <input class="output_destination" type="text" placeholder="抽出結果ファイルの出力先を入力してください">
+                <p><button class="ext_button" id="keyword_button" type="button">抽出開始</button></p>
+            </form>
+        </div>
+        <!-- JavaScript読み込み -->
+        <script type="text/javascript" src="./eel.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>
